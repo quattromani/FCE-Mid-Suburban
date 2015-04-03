@@ -1,0 +1,17 @@
+- name: 'directory'
+  url: '/directory'
+
+- name: 'sales & promotions'
+  url: '/sales'
+
+- name: 'dining & entertainment'
+  url: '/dine'
+
+- name: 'events'
+  url: '/events'
+
+- name: 'center info'
+  url: '/info'
+
+- name: 'jobs'
+  url: '/jobs'

@@ -1,0 +1,564 @@
+@charset "UTF-8";
+
+.content {
+	position: relative;
+	overflow: auto;
+	@include padding($base-spacing 0 0);
+	z-index: 0;
+}
+
+.container {
+	display: block;
+	max-width: $site-width;
+	@include margin(0, auto);
+	overflow: visible;
+
+	@include bp(bp-medium) {
+		@include padding($base-spacing);
+	}
+
+	@include bp(bp-small) {
+		@include padding($base-spacing / 2);
+	}
+}
+
+// Clearfix
+.clearfix,
+%clearfix {
+	zoom: 1;
+
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/* ==========================
+    Grid
+    ========================== */
+
+    .row {
+    	@include row;
+    }
+
+    .full {
+    	@include col($site-column-count);
+    }
+
+    .half {
+    	@include col($site-column-count / 2);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 2);
+
+    		@include bp(bp-small) {
+    			@include col($site-column-count);
+    		}
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count);
+    	}
+    }
+
+    .third {
+    	@include col($site-column-count / 3);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 3);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 2);
+
+    		&:nth-child(even) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count);
+    	}
+    }
+
+    .fourth {
+    	@include col($site-column-count / 4);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 4);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 2);
+
+    		&:nth-child(even) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count);
+    		@include first;
+    	}
+    }
+
+    .fifth {
+    	@include col($site-column-count / 5);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 5);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 2);
+
+    		&:nth-child(even) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count);
+    		@include first;
+    	}
+    }
+
+    .sixth {
+    	@include col($site-column-count / 6);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 6);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 3);
+
+    		&:nth-child(3n+1) {
+    			@include first;
+    		}
+    	}
+    }
+
+    .seventh {
+    	@include col($site-column-count / 7);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 7);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 3);
+
+    		&:nth-child(3n + 1) {
+    			@include first;
+    		}
+    	}
+    }
+
+    .eighth {
+    	@include col($site-column-count / 8);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 8);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 4);
+
+    		&:nth-child(4n) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count / 2);
+
+    		&:nth-child(4n) {
+    			margin-left: $site-gutter-width;
+    		}
+
+    		&:nth-child(2n+1) {
+    			@include first;
+    		}
+    	}
+    }
+
+    .ninth {
+    	@include col($site-column-count / 9);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 9);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 3);
+
+    		&:nth-child(3n+1) {
+    			@include first;
+    		}
+    	}
+    }
+
+    .tenth {
+    	@include col($site-column-count / 10);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 10);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 4);
+
+    		&:nth-child(4n) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count / 2);
+
+    		&:nth-child(4n) {
+    			margin-left: $site-gutter-width;
+    		}
+
+    		&:nth-child(2n + 1) {
+    			@include first;
+    		}
+    	}
+    }
+
+    .eleventh {
+    	@include col($site-column-count / 11);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 11);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 4);
+
+    		&:nth-child(4n) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-small) {
+    		@include col($site-column-count / 2);
+
+    		&:nth-child(4n) {
+    			margin-left: $site-gutter-width;
+    		}
+
+    		&:nth-child(2n + 1) {
+    			@include first;
+    		}
+    	}
+    }
+
+    .twelfth {
+    	@include col($site-column-count / 12);
+
+    	.marginless & {
+    		@include marginless-col($site-column-count / 12);
+    	}
+
+    	&:first-child {
+    		@include first;
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 6);
+
+    		&:nth-child(6n) {
+    			@include first;
+    		}
+    	}
+
+    	@include bp(bp-medium) {
+    		@include col($site-column-count / 3);
+
+    		&:nth-child(6n) {
+    			margin-left: $site-gutter-width;
+    		}
+
+    		&:nth-child(3n+1) {
+    			@include first;
+    		}
+    	}
+    }
+
+// Combinations
+.golden-long {
+	@include col($site-column-count * (1 / 1.618));
+
+	.marginless & {
+		@include marginless-col($site-column-count * (1 / 1.618));
+	}
+
+	&:first-child {
+		@include first;
+	}
+}
+
+.golden-short {
+	@include col($site-column-count * (1 - (1 / 1.618)));
+
+	.marginless & {
+		@include marginless-col($site-column-count * (1 - (1 / 1.618)));
+	}
+
+	&:first-child {
+		@include first;
+	}
+}
+
+.two-fifths {
+	@include col(($site-column-count / 5) * 2);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 5) * 2);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count / 2);
+	}
+}
+
+.three-fifths {
+	@include col(($site-column-count / 5) * 3);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 5) * 3);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count);
+	}
+}
+
+.four-fifths {
+	@include col(($site-column-count / 5) * 4);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 5) * 4);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count);
+	}
+}
+
+.two-thirds {
+	@include col(($site-column-count / 3) * 2);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 3) * 2);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count);
+	}
+}
+
+.three-fourths {
+	@include col(($site-column-count / 4) * 3);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 4) * 3);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count);
+	}
+}
+
+.three-eighths {
+	@include col(($site-column-count / 8) * 3);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 8) * 3);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count);
+	}
+}
+
+.five-eighths {
+	@include col(($site-column-count / 8) * 5);
+
+	.marginless & {
+		@include marginless-col(($site-column-count / 8) * 5);
+	}
+
+	&:first-child {
+		@include first;
+	}
+
+	@include bp(bp-medium) {
+		@include col($site-column-count);
+	}
+}
+
+/* ==========================
+    Multi Column
+    ========================== */
+
+    [class*='two_column_'] {
+    	@include columns(2, ($base-spacing * 2));
+    }
+
+    [class*='three_column_'] {
+    	@include columns(3, ($base-spacing * 2));
+    }
+
+    [class*='four_column_'] {
+    	@include columns(4, ($base-spacing * 2));
+    }
+
+    [class*='_column_'] {
+    	@include bp(bp-small) {
+    		@include columns(1, ($base-spacing * 1));
+    	}
+    }
+
+// body {
+//   background-color: $site-bg;
+// }
+
+// .container {
+//   @include outer-container;
+//   position: relative;
+// }
+
+// .content {
+//   background-color: $color-white;
+//   @include padding($base-spacing);
+//   border-top: $base-border;
+//   border-bottom: $base-border;
+
+//   .container {
+//     background-color: $color-white;
+//   }
+// }
+
+// section {
+//   overflow: hidden;
+//   @include media($mobile) {
+//     @include span-columns(4);
+//   }
+// }
+
+// article {
+//   @include outer-container;
+//   @include span-columns(7.7);
+//   @include margin(0 null);
+
+//   @include media($mobile) {
+//     @include span-columns(4);
+//     @include padding(0);
+//     border: none;
+//   }
+// }
+
+// aside {
+//   @include span-columns(4.3);
+//   @include padding($base-spacing 0.1em $base-spacing $base-spacing);
+//   border-left: $base-border;
+
+//   @include media($mobile) {
+//     @include span-columns(4);
+//     @include padding(0);
+//     border: none;
+//   }
+
+//   img, .adBlock-300-250 {
+//     @include image-bordered;
+//     @include image-shadowed;
+//     //overflow: hidden; //added this so the img won't stick out...
+//     @include media($mobile) {
+//       box-shadow: none;
+//     }
+//   }
+// }
+
+// .mobile-show { display: none; }
+
+// @include media($mobile) {
+//   .mobile-hide { display: none; }
+//   .mobile-show { display: block; }
+// }
+
+
+.reveal-wrapper {
+	overflow: hidden;
+}

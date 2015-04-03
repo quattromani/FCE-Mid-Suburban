@@ -1,0 +1,47 @@
+// =Alpha
+$site-alpha: .65;
+
+// =Colors
+$color-white: #fff;
+$color-off-white: whitesmoke;
+$color-black: #000;
+$color-grey: #748791;
+$color-light-grey: #ece6ea;
+$color-dark-grey: #4e4e56;
+
+// =Brand Palette
+$color-brand-primary: #b53d3b; // Headings
+$color-brand-secondary: #676665; // Text
+$color-brand-tertiary: $color-white; // Background
+$color-brand-quaternary: #d8c954; // Accent
+$color-brand-quinary: #989f4b; // Accent
+
+$color-brand-primary-complimentary: #5a9997;
+$color-brand-secondary-complimentary: #676665;
+$color-brand-tertiary-complimentary: $color-white;
+$color-brand-quaternary-complimentary: #d8c954;
+$color-brand-quinary-complimentary: #989f48;
+
+$color-primary-red: red;
+$color-primary-green: green;
+$color-primary-blue: $color-brand-quinary;
+
+// =Background
+$site-bg: $color-white;
+$site-bg-start: $color-brand-tertiary;
+$site-bg-end: #fff;
+$site-background-attachment: null; // 'fixed, local, inherit, or null'
+
+// =Default Text Colors
+$base-font-color: $color-brand-secondary;
+$base-accent-color: $color-brand-tertiary;
+// $heading-color: $color-brand-primary;
+// $heading-color-alt: $color-brand-secondary;
+
+// =Supplementary Colors
+$alert-bg: $color-primary-red;
+$alert-color: $color-primary-red;
+$success-bg: $color-primary-green;
+$success-color: $color-primary-green;
+$info-bg: mix($color-brand-primary, $color-white, 20%);
+$info-color: $color-primary-blue;
