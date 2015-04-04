@@ -51,12 +51,12 @@ $('.fonts').each(function(){
 	var fonts = $(this).css('font-family');
 	$(this).prepend(fonts);
 });
-;// $(function() {
-//   var headerHeight = $('.header-banner').outerHeight();
-//   var navHeight = $('nav').outerHeight();
-//   $('.banner').css('margin-top', -(headerHeight + navHeight));
-//   console.log(headerHeight);
-// });
+;$(function() {
+  var headerHeight = $('.header-banner').outerHeight();
+  var navHeight = $('nav').outerHeight();
+  $('.banner').css('margin-top', -(headerHeight + navHeight));
+  console.log(headerHeight);
+});
 ;// Open all external links in a new window
 $('a[href^="http://"], a[href^="https://"], a[href$=".pdf"]').attr('target','_blank');
 ;/*

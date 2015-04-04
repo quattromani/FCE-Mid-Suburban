@@ -4590,11 +4590,13 @@ footer {
 
 .banner {
   position: relative;
-  min-height: 250px;
   background-color: #43b7d8;
   color: #fff;
   text-transform: uppercase;
   box-shadow: inset 0 -40px 80px -40px rgba(97, 75, 41, 0.2); }
+  .banner .sy-box {
+    max-width: 1200px;
+    margin: 0 auto; }
   .banner img {
     margin: 0 auto; }
   .banner .content {
