@@ -914,9 +914,11 @@ var nav = $('nav');
 $(window).scroll(function() {
   if( $(this).scrollTop() > hdr ) {
     nav.addClass(ns);
+    $('header').css('z-index', '-1');
     $('.header-banner').css('margin-top', navHeight);
   } else {
     nav.removeClass(ns);
+    $('header').css('z-index', '9');
     $('.header-banner').css('margin-top', '0');
   }
 });
