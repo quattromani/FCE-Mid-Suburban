@@ -44,10 +44,12 @@
 <div class="outer-wrapper">
 	<div class="inner-wrapper">
 		<header role="banner" class="header-banner">
-	<div class="mall-logo">
-		<a href="FCE-Lifestyle">
-			<img src="../images/mall-logo.png" alt="Tower Center">
-		</a>
+	<div class="container">
+		<div class="mall-logo">
+			<a href="FCE-Lifestyle">
+				<img src="../images/mall-logo.png" alt="Tower Center">
+			</a>
+		</div>
 	</div>
 </header>
 
@@ -174,8 +176,20 @@
     </footer>
     <!-- ./Footer Component -->
 
+
+		<ul id="menu">
+  <a class="menu-button fa fa-paper-plane" href="#menu" title="Show navigation"></a>
+  <a class="menu-button fa fa-paper-plane" href="#0" title="Hide navigation"></a>
+  
+  <li class="menu-item"><a href="#menu"><i class="fa fa-facebook"></i></a></li>
+  <li class="menu-item"><a href="#menu"><i class="fa fa-twitter"></i></a></li>
+  <li class="menu-item"><a href="#menu"><i class="fa fa-calendar"></i></a></li>
+  <li class="menu-item"><a href="#menu"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+
 	</div>
 </div>
+<div class="blur-overlay"></div>
     <!-- scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
@@ -197,9 +211,14 @@
 			  speed: 500
 			});
     </script>
+    <script>
+    $('#outer_container').PieMenu({
+        'starting_angel': 0(Starting Angle in degree),
+        'angel_difference' : 180(Displacement angle in degree),
+        'radius': 190 (circle radius in px),
+    });
+    </script>
     <script src="http://localhost:4000/livereload.js"></script>
   </body>
   </html>
-
-
 
