@@ -173,10 +173,14 @@
 	</div>
 	<div class="social">
 		<div class="facebook">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet, deserunt quas!
+			<span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet, deserunt quas!
+			</span>
 		</div>
 		<div class="twitter">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quo, explicabo.
+			<span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur eveniet, deserunt quas!
+			</span>
 		</div>
 	</div>
 </div>
@@ -2931,10 +2935,22 @@
     <!-- ./Footer Component -->
 
 
-		<ul id="menu">
-  <a class="menu-button fa fa-paper-plane" href="#menu" title="Show navigation"></a>
-  <a class="menu-button fa fa-paper-plane" href="#0" title="Hide navigation"></a>
-  
+		<style>
+	input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+</style>
+
+<ul id="menu">
+  <label for="menu-button" class="menu-button">
+		<input type="checkbox" id="menu-button">
+			<span>
+				<i class="fa fa-paper-plane fa-2x"></i>
+			</span>
+		</input>
+	</label>
   <li class="menu-item"><a href="#menu"><i class="fa fa-facebook"></i></a></li>
   <li class="menu-item"><a href="#menu"><i class="fa fa-twitter"></i></a></li>
   <li class="menu-item"><a href="#menu"><i class="fa fa-calendar"></i></a></li>
