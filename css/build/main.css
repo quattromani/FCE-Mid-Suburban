@@ -6514,7 +6514,8 @@ ul.tabs {
         display: block;
         margin-right: 5.01424%;
         width: 100%;
-        margin-right: 0; }
+        margin-right: 0;
+        padding: 2em; }
         .component-insider .insider:last-child {
           margin-right: 0; } }
     .component-insider .insider:first-child {
