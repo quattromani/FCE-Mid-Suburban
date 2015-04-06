@@ -6548,7 +6548,10 @@ ul.tabs {
                 -ms-transform: translate(-50%);
                     transform: translate(-50%);
             top: -1px; } }
-    .component-insider .insider img {
+    .component-insider .insider .insider-logo {
+      fill: #dacc34; }
+    .component-insider .insider svg {
+      display: block;
       margin: 0 auto 2em; }
     .component-insider .insider .cta,
     .component-insider .insider .btn,
