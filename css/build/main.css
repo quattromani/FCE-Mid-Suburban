@@ -6690,9 +6690,7 @@ ul.tabs {
   list-style: none;
   z-index: 99991; }
 .component-follow input[type=checkbox] {
-  position: absolute;
-  top: -9999px;
-  left: -9999px; }
+  display: none; }
 .component-follow .menu-button {
   box-shadow: 0 0px 10px 0px #748791;
   height: 60px;
