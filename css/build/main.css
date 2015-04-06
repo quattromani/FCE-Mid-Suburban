@@ -6675,78 +6675,79 @@ ul.tabs {
         content: '\f081';
         color: #00aced; }
 
-.component-follow ul {
+.component-follow {
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%);
       -ms-transform: translate(-50%);
           transform: translate(-50%);
-  height: 60px;
-  width: 60px;
-  font-size: 30px;
-  font-size: 3rem;
   position: fixed;
   bottom: 2em;
-  list-style: none;
   z-index: 99991; }
-.component-follow input[type=checkbox] {
-  display: none; }
-.component-follow .menu-button {
-  box-shadow: 0 0px 10px 0px #748791;
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -30px 0 0 -30px;
-  border-radius: 50%;
-  background-clip: padding-box;
-  background: #fff;
-  overflow: hidden;
-  line-height: 60px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  z-index: -1; }
-  .component-follow .menu-button:before {
-    font-family: "FontAwesome", Arial, Sans-Serif;
-    font-style: normal;
-    font-weight: normal;
+  .component-follow ul {
+    height: 60px;
+    width: 60px;
     font-size: 30px;
     font-size: 3rem;
-    content: '\f1d8';
-    color: #fb8c09; }
-.component-follow .menu-item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  background-clip: padding-box;
-  display: inline-block;
-  margin: -30px 0 0 -30px;
-  background-color: #fff;
-  line-height: 60px;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-transform: translate(0px, 0px);
-      -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-  -webkit-transition: -webkit-transform 500ms;
-          transition: transform 500ms;
-  z-index: -2; }
-  .component-follow .menu-item.fa {
-    line-height: inherit; }
-  .component-follow .menu-item a {
-    color: #fb8c09;
-    position: relative;
-    text-decoration: none; }
-  .component-follow .menu-item:active {
-    background: #ece6ea; }
+    list-style: none; }
+  .component-follow input[type=checkbox] {
+    display: none; }
+  .component-follow .menu-button {
+    box-shadow: 0 0px 10px 0px #748791;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -30px 0 0 -30px;
+    border-radius: 50%;
+    background-clip: padding-box;
+    background: #fff;
+    overflow: hidden;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 10; }
+    .component-follow .menu-button:before {
+      font-family: "FontAwesome", Arial, Sans-Serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 30px;
+      font-size: 3rem;
+      content: '\f1d8';
+      color: #fb8c09; }
+  .component-follow .menu-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-clip: padding-box;
+    display: inline-block;
+    margin: -30px 0 0 -30px;
+    background-color: #fff;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    -webkit-transition: -webkit-transform 500ms;
+            transition: transform 500ms;
+    z-index: -2; }
+    .component-follow .menu-item.fa {
+      line-height: inherit; }
+    .component-follow .menu-item a {
+      color: #fb8c09;
+      position: relative;
+      text-decoration: none; }
+    .component-follow .menu-item:active {
+      background: #ece6ea; }
 
 .component-follow input:checked ~ .menu-item:nth-child(3) {
   box-shadow: 0 0px 10px 0px #748791;
@@ -6779,14 +6780,6 @@ ul.tabs {
   -webkit-transform: translate(120px, 0.0px);
       -ms-transform: translate(120px, 0.0px);
           transform: translate(120px, 0.0px); }
-
-.component-follow input:checked ~ .menu-item:nth-child(7) {
-  box-shadow: 0 0px 10px 0px #748791;
-  -webkit-transition-delay: 375ms;
-          transition-delay: 375ms;
-  -webkit-transform: translate(60.0px, 103.92305px);
-      -ms-transform: translate(60.0px, 103.92305px);
-          transform: translate(60.0px, 103.92305px); }
 
 .summary {
   background-color: green;
