@@ -6154,11 +6154,11 @@ ul.tabs {
   color: #111;
   font-weight: 800;
   position: absolute;
-  background-color: #fff;
+  background-color: rgba(67, 183, 216, 0.9);
   width: 2.8em;
   height: 2.8em;
   left: 50%;
-  top: 50%;
+  bottom: 6em;
   margin-top: -1.4em;
   margin-left: -1.4em;
   border-radius: 50%; }
@@ -6219,6 +6219,9 @@ ul.tabs {
 .sy-filler.ready {
   -webkit-transition: padding 600ms ease;
   transition: padding 600ms ease; }
+
+.sy-controls {
+  display: block; }
 
 .component-insider {
   max-width: 1000px;
