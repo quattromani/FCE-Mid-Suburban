@@ -6527,28 +6527,26 @@ ul.tabs {
       .component-insider .insider:last-child span {
         font-size: 22px;
         font-size: 2.2rem; }
-      .component-insider .insider:last-child:after {
-        height: 35px;
-        width: 35px;
+      .component-insider .insider:last-child .pinch {
+        height: 50px;
+        width: 50px;
         position: absolute;
-        left: 0;
-        bottom: 3em;
-        content: '';
-        background-color: #43b7d8;
-        -webkit-mask: url(../../images/insider-arrow.svg) no-repeat;
-                mask: url(../../images/insider-arrow.svg) no-repeat;
-        -webkit-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-                transform: rotate(-90deg);
+        left: -1em;
+        bottom: 1em;
         z-index: 9; }
+        .component-insider .insider:last-child .pinch-color {
+          fill: #43b7d8; }
         @media screen and (max-width: 600px) {
-          .component-insider .insider:last-child:after {
+          .component-insider .insider:last-child .pinch {
             position: absolute;
             left: 50%;
             -webkit-transform: translate(-50%);
                 -ms-transform: translate(-50%);
                     transform: translate(-50%);
-            top: -1px; } }
+            top: -1em;
+            -webkit-transform: translate(-50%) rotate(90deg);
+                -ms-transform: translate(-50%) rotate(90deg);
+                    transform: translate(-50%) rotate(90deg); } }
     .component-insider .insider .insider-logo {
       fill: #dacc34; }
     .component-insider .insider svg {
