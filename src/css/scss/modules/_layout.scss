@@ -1,564 +1,200 @@
 @charset "UTF-8";
 
-.content {
-	position: relative;
-	overflow: auto;
-	@include padding($base-spacing 0 0);
-	z-index: 0;
+body {
+	background-color: $site-bg;
 }
 
 .container {
-	display: block;
-	max-width: $site-width;
-	@include margin(0, auto);
-	overflow: visible;
-
-	@include bp(bp-medium) {
-		@include padding($base-spacing);
-	}
-
-	@include bp(bp-small) {
-		@include padding($base-spacing / 2);
-	}
+	@include outer-container;
+	position: relative;
 }
 
-// Clearfix
-.clearfix,
-%clearfix {
-	zoom: 1;
-
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
-
-	&:after {
-		clear: both;
-	}
+.content {
+	@include padding($base-spacing);
 }
 
-/* ==========================
-    Grid
-    ========================== */
 
-    .row {
-    	@include row;
-    }
-
-    .full {
-    	@include col($site-column-count);
-    }
-
-    .half {
-    	@include col($site-column-count / 2);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 2);
-
-    		@include bp(bp-small) {
-    			@include col($site-column-count);
-    		}
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count);
-    	}
-    }
-
-    .third {
-    	@include col($site-column-count / 3);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 3);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 2);
-
-    		&:nth-child(even) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count);
-    	}
-    }
-
-    .fourth {
-    	@include col($site-column-count / 4);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 4);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 2);
-
-    		&:nth-child(even) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count);
-    		@include first;
-    	}
-    }
-
-    .fifth {
-    	@include col($site-column-count / 5);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 5);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 2);
-
-    		&:nth-child(even) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count);
-    		@include first;
-    	}
-    }
-
-    .sixth {
-    	@include col($site-column-count / 6);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 6);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 3);
-
-    		&:nth-child(3n+1) {
-    			@include first;
-    		}
-    	}
-    }
-
-    .seventh {
-    	@include col($site-column-count / 7);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 7);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 3);
-
-    		&:nth-child(3n + 1) {
-    			@include first;
-    		}
-    	}
-    }
-
-    .eighth {
-    	@include col($site-column-count / 8);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 8);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 4);
-
-    		&:nth-child(4n) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count / 2);
-
-    		&:nth-child(4n) {
-    			margin-left: $site-gutter-width;
-    		}
-
-    		&:nth-child(2n+1) {
-    			@include first;
-    		}
-    	}
-    }
-
-    .ninth {
-    	@include col($site-column-count / 9);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 9);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 3);
-
-    		&:nth-child(3n+1) {
-    			@include first;
-    		}
-    	}
-    }
-
-    .tenth {
-    	@include col($site-column-count / 10);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 10);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 4);
-
-    		&:nth-child(4n) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count / 2);
-
-    		&:nth-child(4n) {
-    			margin-left: $site-gutter-width;
-    		}
-
-    		&:nth-child(2n + 1) {
-    			@include first;
-    		}
-    	}
-    }
-
-    .eleventh {
-    	@include col($site-column-count / 11);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 11);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 4);
-
-    		&:nth-child(4n) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-small) {
-    		@include col($site-column-count / 2);
-
-    		&:nth-child(4n) {
-    			margin-left: $site-gutter-width;
-    		}
-
-    		&:nth-child(2n + 1) {
-    			@include first;
-    		}
-    	}
-    }
-
-    .twelfth {
-    	@include col($site-column-count / 12);
-
-    	.marginless & {
-    		@include marginless-col($site-column-count / 12);
-    	}
-
-    	&:first-child {
-    		@include first;
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 6);
-
-    		&:nth-child(6n) {
-    			@include first;
-    		}
-    	}
-
-    	@include bp(bp-medium) {
-    		@include col($site-column-count / 3);
-
-    		&:nth-child(6n) {
-    			margin-left: $site-gutter-width;
-    		}
-
-    		&:nth-child(3n+1) {
-    			@include first;
-    		}
-    	}
-    }
-
-// Combinations
-.golden-long {
-	@include col($site-column-count * (1 / 1.618));
-
-	.marginless & {
-		@include marginless-col($site-column-count * (1 / 1.618));
-	}
-
-	&:first-child {
-		@include first;
-	}
+.row {
+	@include outer-container;
+	margin-bottom: $base-spacing;
 }
 
-.golden-short {
-	@include col($site-column-count * (1 - (1 / 1.618)));
+	.half {
+		@include span-columns(6);
 
-	.marginless & {
-		@include marginless-col($site-column-count * (1 - (1 / 1.618)));
+		.marginless & {
+			@include span-columns(6 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
-	}
-}
+	.third {
+		@include span-columns(4);
 
-.two-fifths {
-	@include col(($site-column-count / 5) * 2);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 5) * 2);
+		.marginless & {
+			@include span-columns(4 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.fourth {
+		@include span-columns(3);
+
+		.marginless & {
+			@include span-columns(3 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count / 2);
-	}
-}
+	.fifth {
+		@include span-columns(2.4);
 
-.three-fifths {
-	@include col(($site-column-count / 5) * 3);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 5) * 3);
+		.marginless & {
+			@include span-columns(2.4 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.sixth {
+		@include span-columns(2);
+
+		.marginless & {
+			@include span-columns(2 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count);
-	}
-}
+	.seventh {
+		@include span-columns(1.7142857143);
 
-.four-fifths {
-	@include col(($site-column-count / 5) * 4);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 5) * 4);
+		.marginless & {
+			@include span-columns(1.7142857143 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.eighth {
+		@include span-columns(1.5);
+
+		.marginless & {
+			@include span-columns(1.5 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count);
-	}
-}
+	.ninth {
+		@include span-columns(1.3333333333);
 
-.two-thirds {
-	@include col(($site-column-count / 3) * 2);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 3) * 2);
+		.marginless & {
+			@include span-columns(1.3333333333 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.tenth {
+		@include span-columns(1.2);
+
+		.marginless & {
+			@include span-columns(1.2 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count);
-	}
-}
+	.eleventh  {
+		@include span-columns(1.0909090909);
 
-.three-fourths {
-	@include col(($site-column-count / 4) * 3);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 4) * 3);
+		.marginless & {
+			@include span-columns(1.0909090909 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.twelfth {
+		@include span-columns(1);
+
+		.marginless & {
+			@include span-columns(1 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count);
-	}
-}
+	.golden-long {
+		@include span-columns(7.4165636588);
 
-.three-eighths {
-	@include col(($site-column-count / 8) * 3);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 8) * 3);
+		.marginless & {
+			@include span-columns(7.4165636588 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.golden-short {
+		@include span-columns(4.5834363412);
+
+		.marginless & {
+			@include span-columns(4.5834363412 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count);
-	}
-}
+	.two-thirds {
+		@include span-columns(8);
 
-.five-eighths {
-	@include col(($site-column-count / 8) * 5);
-
-	.marginless & {
-		@include marginless-col(($site-column-count / 8) * 5);
+		.marginless & {
+			@include span-columns(8 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	&:first-child {
-		@include first;
+	.two-fifths {
+		@include span-columns(4.8);
+
+		.marginless & {
+			@include span-columns(4.8 of 12, table);
+			margin-right: 0;
+		}
 	}
 
-	@include bp(bp-medium) {
-		@include col($site-column-count);
+	.three-fifths {
+		@include span-columns(7.2);
+
+		.marginless & {
+			@include span-columns(7.2 of 12, table);
+			margin-right: 0;
+		}
 	}
-}
 
-/* ==========================
-    Multi Column
-    ========================== */
+	.three-eighths {
+		@include span-columns(4.5);
 
-    [class*='two_column_'] {
-    	@include columns(2, ($base-spacing * 2));
-    }
+		.marginless & {
+			@include span-columns(4.5 of 12, table);
+			margin-right: 0;
+		}
+	}
 
-    [class*='three_column_'] {
-    	@include columns(3, ($base-spacing * 2));
-    }
+	.five-eighths {
+		@include span-columns(7.5);
 
-    [class*='four_column_'] {
-    	@include columns(4, ($base-spacing * 2));
-    }
+		.marginless & {
+			@include span-columns(7.5 of 12, table);
+			margin-right: 0;
+		}
+	}
 
-    [class*='_column_'] {
-    	@include bp(bp-small) {
-    		@include columns(1, ($base-spacing * 1));
-    	}
-    }
+	.three-fourths {
+		@include span-columns(9);
 
-// body {
-//   background-color: $site-bg;
-// }
+		.marginless & {
+			@include span-columns(9 of 12, table);
+			margin-right: 0;
+		}
+	}
 
-// .container {
-//   @include outer-container;
-//   position: relative;
-// }
+	.four-fifths {
+		@include span-columns(9.6);
 
-// .content {
-//   background-color: $color-white;
-//   @include padding($base-spacing);
-//   border-top: $base-border;
-//   border-bottom: $base-border;
-
-//   .container {
-//     background-color: $color-white;
-//   }
-// }
-
-// section {
-//   overflow: hidden;
-//   @include media($mobile) {
-//     @include span-columns(4);
-//   }
-// }
-
-// article {
-//   @include outer-container;
-//   @include span-columns(7.7);
-//   @include margin(0 null);
-
-//   @include media($mobile) {
-//     @include span-columns(4);
-//     @include padding(0);
-//     border: none;
-//   }
-// }
-
-// aside {
-//   @include span-columns(4.3);
-//   @include padding($base-spacing 0.1em $base-spacing $base-spacing);
-//   border-left: $base-border;
-
-//   @include media($mobile) {
-//     @include span-columns(4);
-//     @include padding(0);
-//     border: none;
-//   }
-
-//   img, .adBlock-300-250 {
-//     @include image-bordered;
-//     @include image-shadowed;
-//     //overflow: hidden; //added this so the img won't stick out...
-//     @include media($mobile) {
-//       box-shadow: none;
-//     }
-//   }
-// }
-
-// .mobile-show { display: none; }
-
-// @include media($mobile) {
-//   .mobile-hide { display: none; }
-//   .mobile-show { display: block; }
-// }
-
-
-.reveal-wrapper {
-	overflow: hidden;
-}
+		.marginless & {
+			@include span-columns(9.6 of 12, table);
+			margin-right: 0;
+		}
+	}

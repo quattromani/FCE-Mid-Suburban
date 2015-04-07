@@ -1,8 +1,11 @@
-// Base Site Settings
-$site-width: 1000px;
-$max-width: $site-width;
+// =Grid settings
+$gutter: 1em;
+$grid-columns: 12;
+$max-width: 1000px;
 
-// Breakpoints
-$bp-big: 68.75em;
-$bp-medium: 62em;
-$bp-small: 40em;
+// =Breakpoints
+$tablet: new-breakpoint(max-width 1020px 8);
+$mobile: new-breakpoint(max-width 600px 4);
+
+$base-spacing: 1em !default;
+$pad: $base-spacing;

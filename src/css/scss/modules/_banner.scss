@@ -1,10 +1,14 @@
-.banner {
+.hero-banner {
 	position: relative;
-	min-height: 250px;
-	background-color: $header-bg;
+	background-color: $color-brand-quinary;
 	color: $color-white;
 	text-transform: uppercase;
 	@include box-shadow(inset 0 -40px 80px -40px rgba($color-brand-secondary, .2));
+
+	.sy-box {
+		max-width: 1200px;
+		@include margin(0 auto);
+	}
 
 	img {
 		margin: 0 auto;
@@ -14,7 +18,7 @@
 		background-color: transparent;
 	}
 
-	@include bp(bp-small) {
+	@include media($mobile) {
 		height: auto;
 	}
 
@@ -23,10 +27,10 @@
 		color: $color-white;
 
 		& + p {
-			@include margin;
+			@include margin(0);
 		}
 
-		@include bp(bp-small) {
+		@include media($mobile) {
 			@include font-size(55);
 		}
 	}
@@ -36,7 +40,7 @@
 	}
 
 	.content {
-		@include bp(bp-medium) {
+		@include media($tablet) {
 			top: 0;
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
@@ -56,7 +60,7 @@
 		border-bottom: 0;
 	}
 
-	@include bp(bp-small) {
+	@include media($mobile) {
 		min-height: 0;
 	}
 }

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 audio {
-  @include inline-block;
+  display: inline-block;
   max-width: 100%;
 
   &:not([controls]) {

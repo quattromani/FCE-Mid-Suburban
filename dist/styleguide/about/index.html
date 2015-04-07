@@ -44,10 +44,12 @@
 <div class="outer-wrapper">
 	<div class="inner-wrapper">
 		<header role="banner" class="header-banner">
-	<div class="mall-logo">
-		<a href="FCE-Lifestyle">
-			<img src="../images/mall-logo.png" alt="Tower Center">
-		</a>
+	<div class="container">
+		<div class="mall-logo">
+			<a href="FCE-Lifestyle">
+				<img src="../images/mall-logo.png" alt="Tower Center">
+			</a>
+		</div>
 	</div>
 </header>
 
@@ -82,25 +84,21 @@
 			</li>
 			
 			<li>
-				<i class="fa fa-search"></i>
+				<a href="">
+					<i class="fa fa-search"></i>
+				</a>
 			</li>
 		</ul>
 	</div>
 </nav>
 
-		<div class="banner">
-	<ul id="slippry-demo">
+		<div class="hero-banner">
+	<ul id="hero-carousel">
 		<li>
-			<img src="../images/102.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
+			<img src="../images/Stocksy_txpc41b0543D0N000_Large_210286.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
 		</li>
 		<li>
-			<img src="../images/103.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
-		</li>
-		<li>
-			<img src="../images/104.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
-		</li>
-		<li>
-			<img src="../images/105.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
+			<img src="../images/Stocksy_txpc41b0543D0N000_Large_210286.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
 		</li>
 	</ul>
 </div>
@@ -133,13 +131,13 @@
 
     			<ul>
     				<li>
-    					<a href="">Mall Name</a>
+    					<a href="">South Bay Galleria</a>
     				</li>
     				<li>
-    					<a href="">Mall Address</a>
+    					<a href="">123 Main Street</a>
     				</li>
     				<li>
-    					<a href="">Mall Phone Number</a>
+    					<a href="">(303) 800-8000</a>
     				</li>
     			</ul>
 
@@ -156,8 +154,21 @@
     </footer>
     <!-- ./Footer Component -->
 
+
+		<div class="component-follow">
+	<ul>
+		<label for="menu-button" class="menu-button"></label>
+		<input type="checkbox" id="menu-button">
+		<li class="menu-item"><a href="#menu"><i class="fa fa-facebook"></i></a></li>
+		<li class="menu-item"><a href="#menu"><i class="fa fa-twitter"></i></a></li>
+		<li class="menu-item"><a href="#menu"><i class="fa fa-calendar"></i></a></li>
+		<li class="menu-item"><a href="#menu"><i class="fa fa-envelope-o"></i></a></li>
+	</ul>
+</div>
+
 	</div>
 </div>
+<div class="blur-overlay"></div>
     <!-- scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
@@ -167,12 +178,11 @@
     
 
     <script>
-    	jQuery('#slippry-demo').slippry({
+    	jQuery('#hero-carousel').slippry({
 			  // pager
 			  pager: false,
 
 			  // controls
-			  controls: false,
 			  auto: false,
 
 			  //speed
@@ -182,6 +192,4 @@
     <script src="http://localhost:4000/livereload.js"></script>
   </body>
   </html>
-
-
 

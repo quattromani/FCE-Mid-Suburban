@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 video {
-  @include inline-block;
+  display: inline-block;
   top: 0;
   left: 0;
   max-width: 100%;
-  @include margin;
+  @include margin(0);
 
-  @include bp(bp-small) {
+  @include media($mobile) {
     video {
       height: auto;
     }

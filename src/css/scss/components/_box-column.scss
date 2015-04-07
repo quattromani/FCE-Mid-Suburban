@@ -9,7 +9,7 @@
 	background: $site-bg;
 	overflow: auto;
 
-	@include bp(bp-small) {
+	@include media($mobile) {
 		@include padding($base-spacing / 2);
 	}
 }

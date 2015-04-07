@@ -13,7 +13,7 @@ $marginless-col-width: $width / $site-column-count;
 // create row
 @mixin row() {
   @include clearfix;
-  @include inline-block;
+  display: inline-block;
   width: $width;
   margin-bottom: $base-spacing;
 }

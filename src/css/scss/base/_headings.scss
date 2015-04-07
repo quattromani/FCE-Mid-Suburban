@@ -16,11 +16,11 @@ $i: 1;
 		color: nth($value, 5);
 
 		@if $i <= 3 {
-			@include bp(bp-medium) {
+			@include media($tablet) {
 				@include font-size(nth($value, 2) * .875)
 			}
 
-			@include bp($bp-small) {
+			@include media($mobile) {
 				@include font-size(nth($value, 2) * .75)
 			}
 		}
@@ -34,5 +34,5 @@ $i: 1;
 .h4,
 .h5,
 .h6 {
-	@include inline-block;
+	display: inline-block;
 }

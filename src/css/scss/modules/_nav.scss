@@ -16,11 +16,13 @@ nav {
 	position: relative;
 	width: 100%;
 	background-color: $nav-bg;
+	@include box-shadow(0 10px 14px 1px rgba($color-grey, .2));
 	z-index: 99;
 
 	.container {
 		display: table;
 		width: 100%;
+		max-width: 900px;
 		@include padding(0, $base-spacing);
 	}
 
@@ -41,7 +43,7 @@ nav {
 				margin-right: 0;
 			}
 
-			@include bp(bp-medium) {
+			@include media($tablet) {
 				margin: 0;
 			}
 		}
@@ -49,7 +51,7 @@ nav {
 		li {
 			position: relative;
 			display: table-cell;
-			@include padding;
+			@include padding(0);
 			@include font-size($nav-font-size);
 			line-height: normal;
 			text-align: center;
@@ -125,7 +127,7 @@ a.close-panel {
 	display: none;
 }
 
-@include bp(bp-medium) {
+@include media($tablet) {
 
 	.inner-wrapper {
 		width: 100%;
@@ -164,7 +166,7 @@ a.close-panel {
 		background-color: $nav-mobile-bg;
 
 		.container {
-			@include padding;
+			@include padding(0);
 		}
 
 		@if $nav-off-canvas-side == right {
@@ -260,7 +262,7 @@ a.close-panel {
 					border-bottom: 1px solid tint($nav-off-canvas-bg, 20%);
 
 					&:empty {
-						@include padding;
+						@include padding(0);
 					}
 				}
 			}
@@ -293,7 +295,7 @@ a.close-panel {
 	input {
 		max-width: 180px;
 
-		@include bp(bp-medium){
+		@include media($tablet) {
 			max-width: none;
 		}
 	}
@@ -304,7 +306,7 @@ input.search-field {
 		font-family: $fontawesome;
 	}
 
-	@include bp(bp-medium) {
+	@include media($tablet) {
 		width: calc(100% - 2em);
 		@include margin(($base-spacing /2) $base-spacing);
 	}

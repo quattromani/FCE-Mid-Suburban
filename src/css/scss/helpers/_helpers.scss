@@ -40,28 +40,14 @@
 @for $i from 10 through 60 {
 	.fs#{$i} {
 		@include font-size($i);
-		@include bp(bp-medium) {
+		@include media($tablet) {
 			@include font-size($i * .875)
 		}
 
-		@include bp(bp-small) {
+		@include media($mobile) {
 			@include font-size($i * .75)
 		}
 	}
-}
-
-// Create widths in increments of 5%
-[class*='width-'] {
-	@include inline-block;
-}
-
-$widths: 5;
-@while $widths <= 100 {
-	.width-#{$widths} {
-		width: ($widths * 1%);
-	}
-
-	$widths: $widths + 5 !global;
 }
 
 .text-left {
@@ -152,22 +138,6 @@ $widths: 5;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAG0lEQVR42mJgQICZcIIBXZSBOGUAAAAA//8DAIbHA5cISpS5AAAAAElFTkSuQmCC);
 }
 
-.column-count-2 {
-	@include columns(2, $base-spacing * 2);
-}
-
-.column-count-3 {
-	@include columns(3, $base-spacing * 2);
-}
-
-.column-count-4 {
-	@include columns(4, $base-spacing * 2);
-}
-
-.column-count-6 {
-	@include columns(6, $base-spacing * 2);
-}
-
 .nowrap {
 	overflow: hidden;
 }
@@ -198,7 +168,7 @@ $widths: 5;
 	margin-bottom: $base-spacing;
 }
 
-@media (max-width: $bp-medium) {
+@include media($tablet) {
 	.tablet-hidden {
 		display: none !important;
 	}
@@ -213,22 +183,12 @@ $widths: 5;
 
 	.bordered-left,
 	.bordered-right {
-		@include padding;
+		@include padding(0);
 		border: 0;
-	}
-
-	.column-count-2,
-	.column-count-3,
-	.column-count-4 {
-		@include columns(2, $base-spacing * 2)
-	}
-
-	.column-count-6 {
-		@include columns(3, $base-spacing * 2);
 	}
 }
 
-@media (max-width: $bp-small) {
+@include media($mobile) {
 
 	.mobile-hidden {
 		display: none !important;
@@ -241,11 +201,5 @@ $widths: 5;
 
 	.mobile-br {
 		display: block;
-	}
-
-	.column-count-2,
-	.column-count-3,
-	.column-count-4 {
-		@include columns(1, 0)
 	}
 }

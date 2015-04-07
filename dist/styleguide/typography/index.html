@@ -44,10 +44,12 @@
 <div class="outer-wrapper">
 	<div class="inner-wrapper">
 		<header role="banner" class="header-banner">
-	<div class="mall-logo">
-		<a href="FCE-Lifestyle">
-			<img src="../images/mall-logo.png" alt="Tower Center">
-		</a>
+	<div class="container">
+		<div class="mall-logo">
+			<a href="FCE-Lifestyle">
+				<img src="../images/mall-logo.png" alt="Tower Center">
+			</a>
+		</div>
 	</div>
 </header>
 
@@ -82,25 +84,21 @@
 			</li>
 			
 			<li>
-				<i class="fa fa-search"></i>
+				<a href="">
+					<i class="fa fa-search"></i>
+				</a>
 			</li>
 		</ul>
 	</div>
 </nav>
 
-		<div class="banner">
-	<ul id="slippry-demo">
+		<div class="hero-banner">
+	<ul id="hero-carousel">
 		<li>
-			<img src="../images/102.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
+			<img src="../images/Stocksy_txpc41b0543D0N000_Large_210286.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
 		</li>
 		<li>
-			<img src="../images/103.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
-		</li>
-		<li>
-			<img src="../images/104.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
-		</li>
-		<li>
-			<img src="../images/105.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
+			<img src="../images/Stocksy_txpc41b0543D0N000_Large_210286.jpg" alt='<a href=""><h2>Explore</h2><span>This seasons hottest looks</span></a>'>
 		</li>
 	</ul>
 </div>
@@ -226,46 +224,51 @@
 <hr>
 
 <span id="inline-anchor" class="h2 jumpTo-anchor">Inline</span>
-    <ul class="vertical lined">
-      <li><code>&lt;a&gt;</code> - <a href="#">This is a text link</a></li>
-      <li><code>&lt;strong&gt;</code> - <strong>Strong is used to indicate strong importance</strong></li>
-      <li><code>&lt;em&gt;</code> - <em>This text has added emphasis</em></li>
-      <li><code>&lt;b&gt;</code> - The <b>b element</b> is stylistically different text from normal text, without any special importance</li>
-      <li><code>&lt;i&gt;</code> - The <i>i element is text that is set off from the normal text</i></li>
-      <li><code>&lt;u&gt;</code> - The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</li>
-      <li><code>&lt;del&gt; &amp; &lt;ins&gt;</code> -  This text is <del>deleted</del> and <ins>This text is inserted</ins></li>
-      <li><code>&lt;s&gt;</code> - <s>This text has a strikethrough</s></li>
-      <li><code>&lt;sup&gt;</code> - Superscript<sup>&reg;</sup></li>
-      <li><code>&lt;sub&gt;</code> - Subscript for things like H<sub>2</sub>O</li>
-      <li><code>&lt;abbr&gt;</code> - Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></li>
-      <li><code>&lt;kbd&gt;</code> - Keybord input: <kbd>Cmd</kbd></li>
-      <li><code>&lt;q&gt;</code> - <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></li>
-      <li><code>&lt;cite&gt;</code> - <cite>This is a citation</cite></li>
-      <li><code>&lt;dfn&gt;</code> - The <dfn>dfn element</dfn> indicates a definition.</li>
-      <li><code>&lt;mark&gt;</code> - The <mark>mark element</mark> indicates a highlight</li>
-      <li><code>&lt;var&gt;</code> - The <var>var element</var> defines a variable</li>
-      <li>
-        <code>&lt;address&gt;</code>
-        <br>
-        <address>
-          Address Name<br>
-          1234 Main St.<br>
-          Anywhere, US 12345
-        </address>
-      </li>
-      <li>
-        <code>&lt;tel&gt;</code> - <a class="tel" href="tel:+18008519530">1-800-851-9530</a>
-      </li>
-      <li>
-        <code>&lt;blockquote&gt;</code>
-        <blockquote>
-          One small step for man, one giant leap for mankind.
-        </blockquote>
-      </li>
-      <li><span class="text-info"><code>.text-info</code> - This text is informative</span></li>
-      <li><span class="text-error"><code>.text-error</code> - This text is an error</span></li>
-      <li><span class="text-success"><code>.text-success</code> - This text is a success</span></li>
-    </ul>
+<ul class="vertical lined">
+	<li><code>&lt;a&gt;</code> - <a href="#">This is a text link</a></li>
+	<li><code>&lt;a&gt;</code> - <a href="http://google.com">This is an external text link</a></li>
+	<li><code>&lt;a href="mailto"&gt;</code> - <a href="mailto:syrup@pancakes.com" data-cta="Send Email" title="syrup@pancakes.com"></a></li>
+	<li>
+		<code>&lt;a href="tel"&gt;</code> - <a class="tel" href="tel:+18008519530">1-800-851-9530</a>
+	</li>
+	<li><code>&lt;strong&gt;</code> - <strong>Strong is used to indicate strong importance</strong></li>
+	<li><code>&lt;em&gt;</code> - <em>This text has added emphasis</em></li>
+	<li><code>&lt;b&gt;</code> - The <b>b element</b> is stylistically different text from normal text, without any special importance</li>
+	<li><code>&lt;i&gt;</code> - The <i>i element is text that is set off from the normal text</i></li>
+	<li><code>&lt;u&gt;</code> - The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</li>
+	<li><code>&lt;del&gt; &amp; &lt;ins&gt;</code> -  This text is <del>deleted</del> and <ins>This text is inserted</ins></li>
+	<li><code>&lt;s&gt;</code> - <s>This text has a strikethrough</s></li>
+	<li><code>&lt;sup&gt;</code> - Superscript<sup>&reg;</sup></li>
+	<li><code>&lt;sub&gt;</code> - Subscript for things like H<sub>2</sub>O</li>
+	<li><code>&lt;abbr&gt;</code> - Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></li>
+	<li><code>&lt;kbd&gt;</code> - Keybord input: <kbd>Cmd</kbd></li>
+	<li><code>&lt;q&gt;</code> - <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></li>
+	<li><code>&lt;cite&gt;</code> - <cite>This is a citation</cite></li>
+	<li><code>&lt;dfn&gt;</code> - The <dfn>dfn element</dfn> indicates a definition.</li>
+	<li><code>&lt;mark&gt;</code> - The <mark>mark element</mark> indicates a highlight</li>
+	<li><code>&lt;var&gt;</code> - The <var>var element</var> defines a variable</li>
+	<li>
+		<code>&lt;address&gt;</code>
+		<br>
+		<address>
+			Address Name<br>
+			1234 Main St.<br>
+			Anywhere, US 12345
+		</address>
+	</li>
+	<li>
+		<code>&lt;tel&gt;</code> - <a class="tel" href="tel:+18008519530">1-800-851-9530</a>
+	</li>
+	<li>
+		<code>&lt;blockquote&gt;</code>
+		<blockquote>
+			One small step for man, one giant leap for mankind.
+		</blockquote>
+	</li>
+	<li><span class="text-info"><code>.text-info</code> - This text is informative</span></li>
+	<li><span class="text-error"><code>.text-error</code> - This text is an error</span></li>
+	<li><span class="text-success"><code>.text-success</code> - This text is a success</span></li>
+</ul>
 
 
 <hr>
@@ -1819,13 +1822,13 @@
 
     			<ul>
     				<li>
-    					<a href="">Mall Name</a>
+    					<a href="">South Bay Galleria</a>
     				</li>
     				<li>
-    					<a href="">Mall Address</a>
+    					<a href="">123 Main Street</a>
     				</li>
     				<li>
-    					<a href="">Mall Phone Number</a>
+    					<a href="">(303) 800-8000</a>
     				</li>
     			</ul>
 
@@ -1842,8 +1845,21 @@
     </footer>
     <!-- ./Footer Component -->
 
+
+		<div class="component-follow">
+	<ul>
+		<label for="menu-button" class="menu-button"></label>
+		<input type="checkbox" id="menu-button">
+		<li class="menu-item"><a href="#menu"><i class="fa fa-facebook"></i></a></li>
+		<li class="menu-item"><a href="#menu"><i class="fa fa-twitter"></i></a></li>
+		<li class="menu-item"><a href="#menu"><i class="fa fa-calendar"></i></a></li>
+		<li class="menu-item"><a href="#menu"><i class="fa fa-envelope-o"></i></a></li>
+	</ul>
+</div>
+
 	</div>
 </div>
+<div class="blur-overlay"></div>
     <!-- scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
@@ -1853,12 +1869,11 @@
     
 
     <script>
-    	jQuery('#slippry-demo').slippry({
+    	jQuery('#hero-carousel').slippry({
 			  // pager
 			  pager: false,
 
 			  // controls
-			  controls: false,
 			  auto: false,
 
 			  //speed
@@ -1868,6 +1883,4 @@
     <script src="http://localhost:4000/livereload.js"></script>
   </body>
   </html>
-
-
 

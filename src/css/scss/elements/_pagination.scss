@@ -2,8 +2,8 @@
 
 .pagination {
   ol {
-    @include margin;
-    @include padding;
+    @include margin(0);
+    @include padding(0);
   }
 
   li {
@@ -19,7 +19,7 @@
     }
   }
 
-  @include bp(bp-small) {
+  @include media($mobile) {
     @include inline-block();
     width: 100%;
     margin: 0 auto;

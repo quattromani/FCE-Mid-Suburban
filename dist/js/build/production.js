@@ -51,14 +51,49 @@ $('.fonts').each(function(){
 	var fonts = $(this).css('font-family');
 	$(this).prepend(fonts);
 });
-;// $(function() {
-//   var headerHeight = $('.header-banner').outerHeight();
-//   var navHeight = $('nav').outerHeight();
-//   $('.banner').css('margin-top', -(headerHeight + navHeight));
-//   console.log(headerHeight);
-// });
+;function setBannerHeight() {
+	var headerHeight = $('.header-banner').outerHeight();
+	var navHeight = $('nav').outerHeight();
+	$('.hero-banner').css('margin-top', - (headerHeight + navHeight));
+	console.log(headerHeight);
+}
+
+$(document).ready(function() {
+	if($(window).width() > mediumBreakPoint) {
+		setBannerHeight();
+	} else {
+		$('.hero-banner').css('margin-top', 0);
+	}
+});
+
+$(window).resize(function() {
+	if($(window).width() > mediumBreakPoint) {
+		setBannerHeight();
+		console.log($(window).width());
+	} else {
+		$('.hero-banner').css('margin-top', 0);
+	}
+});
 ;// Open all external links in a new window
 $('a[href^="http://"], a[href^="https://"], a[href$=".pdf"]').attr('target','_blank');
+;$(function(){
+
+	$(this).keyup(function(event) {
+		if (event.which === 27) {
+			disablePopup();
+		}
+	});
+
+	$('.blur-overlay').click(function() {
+		disablePopup();
+		return false;
+	});
+});
+
+function disablePopup() {
+	$('.modal-container').fadeOut('normal');
+	$('.blur-overlay').fadeOut('normal');
+}
 ;/*
 Syntax highlighting with language autodetection.
 https://highlightjs.org/
@@ -805,6 +840,70 @@ $(document).ready(function() {
   });
 });
 
+;(function( $ ) {
+
+  $.fn.PieMenu = function(options) {
+	var angle,
+		delay_time,
+		ele_angle=[],
+		x_pos=[],
+		y_pos=[];
+
+    var settings = $.extend( {
+      'starting_angel'   : '0',
+      'angel_difference' : '90',
+	  'radius':'200',
+	  'menu_element' : this.children('.menu_option').children(),
+	  'menu_button' : this.children('.menu_button'),
+    }, options);
+
+
+	angle = parseInt(settings.angel_difference)/(settings.menu_element.length-1);
+	delay_time = 1/(settings.menu_element.length-1);
+
+	function setPosition(val){
+		$(settings.menu_element).each(function(i,ele){
+			$(ele).css({
+			'left' : (val==0)?0:y_pos[i],
+			'top' : (val==0)?0:-x_pos[i],
+			});
+		});
+	}
+
+	$(settings.menu_button).unbind('click', clickHandler);	//remove event if exist
+
+	var clickHandler = function() {
+		if($(this).parent().hasClass('active')){
+			setPosition(0);
+			$(this).parent().removeClass('active');
+			$(this).parent().addClass('inactive');
+
+		}else{
+			setPosition(1);
+			$(this).parent().addClass('active');
+			$(this).parent().removeClass('inactive');
+		}
+		$(this).toggleClass("btn-rotate");
+	};
+
+	$(settings.menu_button).bind('click', clickHandler);
+
+	return settings.menu_element.each(function(i,ele){
+		ele_angle[i] = (parseInt(settings.starting_angel) + angle*(i))*Math.PI/180;
+		 x_pos[i] = (settings.radius * Math.sin(ele_angle[i]));
+         y_pos[i] = (settings.radius * Math.cos(ele_angle[i]));
+
+		 $(ele).css({
+			'-webkit-transform': 'rotate('+(90-ele_angle[i]*180/Math.PI)+'deg)',
+			   '-moz-transform': 'rotate('+(90-ele_angle[i]*180/Math.PI)+'deg)',
+			    '-ms-transform': 'rotate('+(90-ele_angle[i]*180/Math.PI)+'deg)',
+			     '-o-transform': 'rotate('+(90-ele_angle[i]*180/Math.PI)+'deg)',
+			    	'transform': 'rotate('+(90-ele_angle[i]*180/Math.PI)+'deg)',
+		});
+      })
+
+  };
+})( jQuery );
 ;// Add classes to first and last li's for every instance
 $(function() {
   // Add classes to first and last of each list
@@ -906,41 +1005,22 @@ $(function() {
 	});
 });
 
-$(function() {
+var nav = $('nav');
+		navHeight = $('nav').outerHeight();
+    ns = 'fixed-top';
+    hdr = $('header').outerHeight();
 
-	var header = $('header')
-	, header_height = header.outerHeight()
-	, nav = $('nav')
-	, nav_height = nav.outerHeight();
-
-  // Scroll to anchored link in Nav
-  $('nav a').click(function(){
-    // Active Nav links
-    $('nav a').parent('li').removeClass('active');
-    $(this).parent('li').addClass('active');
-    $('html, body').animate({
-    	scrollTop: $($.attr(this, 'href')).offset().top +1
-    }, 500);
-    return false;
-  });
-
-  if ($(window).scrollTop() >= (header_height - nav_height)) {
-  	$('nav').addClass('fixed-top');
-  	$('nav').css('margin-top','0');
+$(window).scroll(function() {
+  if( $(this).scrollTop() > hdr ) {
+    nav.addClass(ns);
+    $('header').css('z-index', '-1');
+    // $('.header-banner').css('margin-top', navHeight);
+  } else {
+    nav.removeClass(ns);
+    $('header').css('z-index', '9');
+    // $('.header-banner').css('margin-top', '0');
   }
-
-  // Make the Nav sticky
-  $(window).bind('scroll', function () {
-  	if ($(window).scrollTop() >= (header_height - nav_height)) {
-  		$('nav').addClass('fixed-top');
-  		$('nav').css('margin-top','0');
-  	} else {
-  		$('nav').removeClass('fixed-top');
-  		// $('nav').css('margin-top', '-49px');
-  	}
-  });
 });
-
 ;;/** @preserve
  *
  * slippry v1.2.7 - Responsive content slider for jQuery

@@ -9,7 +9,7 @@ details {
 	}
 
 	summary {
-		@include inline-block;
+		display: inline-block;
 		width: 100%;
 		@include padding(.5em);
 		background: $color-grey;

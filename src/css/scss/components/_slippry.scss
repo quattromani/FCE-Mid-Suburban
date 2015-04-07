@@ -1,30 +1,33 @@
-
-
 .sy-caption-wrap {
 	display: block;
 	@include horizontal-center;
 	bottom: $base-spacing * 4;
 	width: 400px;
 	@include padding($base-spacing * 2);
-	text-align: right;
+	background: rgba($color-brand-senary,.9);
+	text-align: center;
 	opacity: 1;
 	z-index: 9;
 
+	@include media($mobile) {
+		@include padding($base-spacing);
+	}
+
 	h2 {
 		display: inline-block;
-		@include margin;
-		padding-top: .25em;
-		border-top: 2px solid $color-brand-quaternary;
+		margin-bottom: .25em;
 		color: $color-white;
 	}
 
 	span {
-		display: block;
+		display: inline-block;
+		padding-top: .5em;
+		border-top: 2px solid currentColor;
 		font-weight: bold;
 		color: $color-white;
 	}
 
-	@include bp(bp-small) {
+	@include media($mobile) {
 		bottom: 0;
 	}
 }
@@ -269,11 +272,11 @@
  																																																		color: #111;
  																																																		font-weight: 800;
  																																																		position: absolute;
- 																																																		background-color: #fff;
+ 																																																		background-color: rgba($color-brand-quinary, .9);
  																																																		width: 2.8em;
  																																																		height: 2.8em;
  																																																		left: 50%;
- 																																																		top: 50%;
+ 																																																		bottom: 6em;
  																																																		margin-top: -1.4em;
  																																																		margin-left: -1.4em;
  																																																		-moz-border-radius: 50%;
@@ -370,3 +373,7 @@
 								-o-transition: padding 600ms ease;
 								-webkit-transition: padding 600ms ease;
 								transition: padding 600ms ease; }
+
+.sy-controls {
+  display: block;
+}

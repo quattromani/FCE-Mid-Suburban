@@ -1,30 +1,13 @@
 @charset "UTF-8";
 
 footer {
+	@include padding($base-spacing);
 	background-color: $footer-bg;
 	color: $footer-text;
 	text-align: center;
 
 	.content {
-		@include padding;
-	}
-
-	.container {
-		position: relative;
-
-		&:before {
-			position: absolute;
-			content: url(../../images/footer-flower-left.png);
-			bottom: -1em;
-			left: 0;
-		}
-
-		&:after {
-			position: absolute;
-			content: url(../../images/footer-flower-right.png);
-			right: -8em;
-			bottom: -1em;
-		}
+		@include padding(0);
 	}
 
 	ul {
