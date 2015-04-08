@@ -75,7 +75,7 @@ $(window).resize(function() {
 	}
 });
 ;// Open all external links in a new window
-$('a[href^="http://"], a[href^="https://"], a[href$=".pdf"]').attr('target','_blank');
+$('a[href^="http://"], a[href^="https://"], a[href$=".pdf"], a:not([href^=mailto]').attr('target','_blank');
 ;$(function(){
 
 	$(this).keyup(function(event) {

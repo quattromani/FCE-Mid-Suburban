@@ -38,20 +38,21 @@
 				@include font-size(22);
 			}
 
-			&:after {
-				@include size(35px);
+			.pinch {
+				@include size(50px);
 				position: absolute;
-				left: 0;
-				bottom: 3em;
-				content: '';
-				background-color: $color-brand-quinary;
-				mask: url(../../images/insider-arrow.svg) no-repeat;
-				transform: rotate(-90deg);
+				left: -1em;
+				bottom: 1em;
 				z-index: 9;
+
+				&-color {
+					fill: $color-brand-quinary;
+				}
 
 				@include media($mobile) {
 					@include horizontal-center;
-					top: -1px;
+					top: -1em;
+					transform: translate(-50%) rotate(90deg);
 				}
 			}
 		}
